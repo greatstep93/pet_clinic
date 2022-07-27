@@ -1,4 +1,4 @@
-package com.vet24.discord.model.dto.discord;
+package com.vet24.discord.models.dto.discord;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
