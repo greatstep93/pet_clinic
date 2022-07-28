@@ -1,9 +1,16 @@
 package com.vet24.discord.models.dto.discord;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vet24.discord.models.dto.discord.embed.EmbedDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.EqualsAndHashCode;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.vet24.models.dto.OnCreate;
+import com.vet24.models.dto.OnUpdate;
+import com.vet24.models.util.View;
+
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -11,9 +18,10 @@ import lombok.EqualsAndHashCode;
 
 public class MessageDto {
 
+    @JsonView(View.Get.class)
     private Long id;
 
-    private Integer typeMessage;
+    private Integer type;
 
     private String content;
 
@@ -23,11 +31,11 @@ public class MessageDto {
 
     private AttachmentDto[] attachment;
 
-    private EmbedDto[] embeds;
+    private ArrayList<EmbedDto> embeds;
 
     private UserDto[] mentions;
 
-    private RoleDto[] mention_roles;
+    private Long[] mention_roles;
 
     private boolean pinned;
 
