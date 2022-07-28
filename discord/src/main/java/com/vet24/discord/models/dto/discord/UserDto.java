@@ -1,5 +1,6 @@
 package com.vet24.discord.models.dto.discord;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -7,33 +8,22 @@ import lombok.EqualsAndHashCode;
 @Data
 public class UserDto {
 
-    private Long id;
-
-    private String username;
-
-    private String discriminator;
-
-    private String avatar;
-
+    @JsonProperty(namespace = "bot")
     private boolean bot;
 
-    private boolean system;
+    @JsonProperty(namespace = "id")
+    private Long id;
 
-    private boolean mfa_enabled;
+    @JsonProperty(namespace = "username")
+    private String username;
 
-    private String banner;
+    @JsonProperty(namespace = "avatar")
+    private String avatar;
 
-    private Integer accent_color;
+    @JsonProperty(namespace = "discriminator")
+    private String discriminator;
 
-    private String locale;
-
-    private boolean verified;
-
+    @JsonProperty(namespace = "email")
     private String email;
 
-    private Integer flags;
-
-    private Integer premium_type;
-
-    private Integer public_flags;
 }

@@ -3,6 +3,7 @@ package com.vet24.web.controllers.discord;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.vet24.discord.feign.DiscordClient;
 import com.vet24.discord.models.dto.discord.MessageDto;
+import com.vet24.discord.models.dto.discord.MessageEmbedDto;
 import com.vet24.discord.service.DiscordService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -27,7 +28,7 @@ public class DiscordController implements DiscordService {
         this.discordClient = discordClient;
     }
 
-    private final String webhook = "/993487572003213342/LV3qfF2IcKhsKIQQrv4TPD6w180ALKTXJh0gmJrlO1pg1JLfM1NRzLb3rl1VaQSOKIRG";
+    private final String webhook = "/1002137746204278864/fFu57DcvOGhFfdI20eEzI6XuWaRdQaFKvo4NPi3P0Ey2T8b_rk3E1p7pTRMZ5vJc_ZDt";
 
     @RequestMapping(value = webhook,
             produces = "application/json",
@@ -36,29 +37,24 @@ public class DiscordController implements DiscordService {
     public String executeWebhook() throws JsonProcessingException {
         return discordClient.executeWebhook();
     }
+
     @Operation(summary = "send discord message")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Send message",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MessageDto.class))),
-            @ApiResponse(responseCode = "404", description = "Error 404",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MessageDto.class))),
-            @ApiResponse(responseCode = "400", description = "Error 400",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MessageDto.class)))
-    })
 
     @RequestMapping(value = webhook,
             consumes = "application/json",
             method = RequestMethod.POST)
     @Override
-    public void send(@RequestBody MessageDto message) throws JsonProcessingException {
-        discordClient.send(message);
+    public MessageDto send(@RequestBody MessageDto message, @RequestParam(required = false) Long thread_id, @RequestParam(defaultValue = "true") boolean wait) throws JsonProcessingException {
+        return discordClient.send(message, thread_id, wait);
     }
 
-    @RequestMapping(value = webhook + "/{thread_id}",
-            consumes = "application/json",
-            method = RequestMethod.POST)
-    @Override
-    public void sendInThread(@RequestBody MessageDto message, @PathVariable Long thread_id) throws JsonProcessingException {
-        discordClient.send(message);
-    }
+//    @Operation(summary = "send discord Embed Message")
+//
+//    @RequestMapping(value = webhook,
+//            consumes = "application/json",
+//            method = RequestMethod.POST)
+//    @Override
+//    public MessageEmbedDto sendEmbedMessage(@RequestBody MessageEmbedDto message, @RequestParam(required = false) Long thread_id, @RequestParam(defaultValue = "true") boolean wait) throws JsonProcessingException {
+//        return discordClient.sendEmbedMessage(message, thread_id, wait);
+//    }
 }
