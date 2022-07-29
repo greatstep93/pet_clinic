@@ -109,12 +109,4 @@ public class OpenApiConfig {
                 .pathsToMatch("/api/user/**")
                 .build();
     }
-
-    @Bean
-    public GroupedOpenApi discordApi() {
-        return GroupedOpenApi.builder()
-                .group("discord-webhooks")
-                .pathsToMatch("/api/webhooks/**")
-                .build();
-    }
 }
