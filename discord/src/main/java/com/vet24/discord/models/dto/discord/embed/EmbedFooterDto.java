@@ -8,13 +8,13 @@ import lombok.EqualsAndHashCode;
 @Data
 public class EmbedFooterDto {
 
-    @JsonProperty(namespace = "text")
+    @JsonProperty
     private String text;
 
-    @JsonProperty(namespace = "icon_url",defaultValue = "https://")
+    @JsonProperty
     private String icon_url;
 
-    @JsonProperty(namespace = "proxy_icon_url",defaultValue = "https://")
+    @JsonProperty
     private String proxy_icon_url;
 
 }

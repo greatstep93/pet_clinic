@@ -8,15 +8,15 @@ import lombok.EqualsAndHashCode;
 @Data
 public class EmbedThumbnailDto {
 
-    @JsonProperty(namespace = "url")
+    @JsonProperty
     private String url;
 
-    @JsonProperty(namespace = "proxy_url")
+    @JsonProperty
     private String proxy_url;
 
-    @JsonProperty(namespace = "width")
+    @JsonProperty
     private Integer width;
 
-    @JsonProperty(namespace = "height")
+    @JsonProperty
     private Integer height;
 }

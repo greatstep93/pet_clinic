@@ -10,7 +10,7 @@ import com.vet24.models.dto.OnCreate;
 import com.vet24.models.dto.OnUpdate;
 import com.vet24.models.util.View;
 
-import java.util.ArrayList;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
@@ -18,35 +18,49 @@ import java.util.ArrayList;
 
 public class MessageDto {
 
-    @JsonView(View.Get.class)
+//    @JsonView(View.Get.class)
     private Long id;
-
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private Integer type;
 
+//    @NotBlank(groups = {OnCreate.class}, message = "Поле content не должно быть null")
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private String content;
 
+//    @JsonView(View.Get.class)
     private Long channel_id;
 
+//    @JsonView(View.Get.class)
     private UserDto author;
 
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private AttachmentDto[] attachment;
 
-    private ArrayList<EmbedDto> embeds;
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
+    private EmbedDto[] embeds;
 
+//    @JsonView(View.Get.class)
     private UserDto[] mentions;
 
+//    @JsonView(View.Get.class)
     private Long[] mention_roles;
 
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private boolean pinned;
 
+//    @JsonView(View.Get.class)
     private boolean mention_everyone;
 
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private boolean tts;
 
+//    @JsonView({View.Post.class, View.Put.class, View.Get.class})
     private String timestamp;
 
+//    @JsonView(View.Get.class)
     private String edited_timestamp;
 
+//    @JsonView(View.Get.class)
     private Long webhook_id;
 
 

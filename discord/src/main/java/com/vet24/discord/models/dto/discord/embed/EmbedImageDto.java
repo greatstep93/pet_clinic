@@ -9,15 +9,15 @@ import lombok.EqualsAndHashCode;
 
 public class EmbedImageDto {
 
-    @JsonProperty(namespace = "url")
+    @JsonProperty
     private String url;
 
-    @JsonProperty(namespace = "proxy_url",defaultValue = "https://")
+    @JsonProperty
     private String proxy_url;
 
-    @JsonProperty(namespace = "width")
+    @JsonProperty
     private Integer width;
 
-    @JsonProperty(namespace = "height")
+    @JsonProperty
     private Integer height;
 }

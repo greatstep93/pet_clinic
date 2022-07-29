@@ -7,37 +7,36 @@ import lombok.*;
 @EqualsAndHashCode
 @Getter
 @Setter
-@NoArgsConstructor
 public class EmbedDto {
 
-    @JsonProperty(namespace = "type")
+    @JsonProperty
     private EmbedType type;
 
-    @JsonProperty(namespace = "url",defaultValue = "https://")
+    @JsonProperty
     private String url;
 
-    @JsonProperty(namespace = "title")
+    @JsonProperty
     private String title;
 
-    @JsonProperty(namespace = "description")
+    @JsonProperty
     private String description;
 
-    @JsonProperty(namespace = "color")
+    @JsonProperty
     private Integer color;
 
-//    @JsonProperty(namespace = "timestamp")
-//    private DateTime timestamp;
+    @JsonProperty
+    private String timestamp;
 
-    @JsonProperty(namespace = "fields")
+    @JsonProperty
     private EmbedFieldDto[] fields;
 
-    @JsonProperty(namespace = "image")
+    @JsonProperty
     private EmbedImageDto image;
 
-    @JsonProperty(namespace = "thumbnail")
+    @JsonProperty
     private EmbedThumbnailDto thumbnail;
 
-    @JsonProperty(namespace = "footer")
+    @JsonProperty
     private EmbedFooterDto footer;
 
 }

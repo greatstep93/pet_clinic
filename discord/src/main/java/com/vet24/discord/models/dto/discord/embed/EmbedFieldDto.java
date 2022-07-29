@@ -8,12 +8,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class EmbedFieldDto {
 
-    @JsonProperty(namespace = "name")
+    @JsonProperty
     private String name;
 
-    @JsonProperty(namespace = "value")
+    @JsonProperty
     private String value;
 
-    @JsonProperty(namespace = "inline")
+    @JsonProperty
     private boolean inline;
 }

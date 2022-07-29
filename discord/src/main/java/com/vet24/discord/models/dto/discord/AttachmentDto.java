@@ -1,6 +1,8 @@
 package com.vet24.discord.models.dto.discord;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.vet24.models.util.View;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -8,34 +10,34 @@ import lombok.EqualsAndHashCode;
 @Data
 public class AttachmentDto {
 
-    @JsonProperty(namespace = "id")
+    @JsonView(View.Get.class)
     private Long id;
 
-    @JsonProperty(namespace = "filename")
+
     private String filename;
 
-    @JsonProperty(namespace = "description")
+
     private String description;
 
-    @JsonProperty(namespace = "content_type")
+
     private String content_type;
 
-    @JsonProperty(namespace = "size")
+    @JsonView(View.Get.class)
     private Integer size;
 
-    @JsonProperty(namespace = "url")
+
     private String url;
 
-    @JsonProperty(namespace = "proxy_url")
+
     private String proxy_url;
 
-    @JsonProperty(namespace = "height")
+    @JsonView(View.Get.class)
     private Integer height;
 
-    @JsonProperty(namespace = "width")
+    @JsonView(View.Get.class)
     private Integer width;
 
-    @JsonProperty(namespace = "ephemeral")
+
     private boolean ephemeral;
 
 }
