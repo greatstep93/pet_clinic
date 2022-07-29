@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "api-service",url = "https://discord.com/api/webhooks/993487572003213342/LV3qfF2IcKhsKIQQrv4TPD6w180ALKTXJh0gmJrlO1pg1JLfM1NRzLb3rl1VaQSOKIRG")
 public interface DiscordClient {
-    @RequestMapping(
-            produces = "application/json",
-            method = RequestMethod.GET)
-    String getWebhook() throws JsonProcessingException;
 
     @RequestMapping( value = "/messages/{message_id}",
             produces = "application/json",
@@ -26,15 +22,16 @@ public interface DiscordClient {
                                     @RequestParam(required = false) Long thread_id,
                                     @RequestParam(defaultValue = "true") boolean wait) throws JsonProcessingException;
 
-    @PatchMapping( value = "/messages/{message_id}",
+    @RequestMapping( value = "/messages/{message_id}",
             consumes = "application/json",
-            produces = "application/json")
+            produces = "application/json",
+            method = RequestMethod.PATCH)
     ResponseEntity<MessageDto> updateMessage(@PathVariable Long message_id,
                                              @RequestParam(required = false) Long thread_id,
                                              @RequestBody MessageDto message) throws JsonProcessingException;
 
     @RequestMapping( value = "/messages/{message_id}",
             method = RequestMethod.DELETE)
-    ResponseEntity<MessageDto> deleteMessageToId(@PathVariable Long message_id,
-                                                 @RequestParam(required = false) Long thread_id) throws JsonProcessingException;
+    void deleteMessageToId(@PathVariable Long message_id,
+                           @RequestParam(required = false) Long thread_id) throws JsonProcessingException;
 }
