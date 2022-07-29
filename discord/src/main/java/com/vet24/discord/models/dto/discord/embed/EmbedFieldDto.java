@@ -1,19 +1,17 @@
 package com.vet24.discord.models.dto.discord.embed;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @EqualsAndHashCode
+@Getter
+@Setter
 public class EmbedFieldDto {
 
-    @JsonProperty
     private String name;
 
-    @JsonProperty
     private String value;
 
-    @JsonProperty
     private boolean inline;
 }

@@ -23,7 +23,8 @@ public interface DiscordClient {
             consumes = "application/json",
             method = RequestMethod.POST)
     ResponseEntity<MessageDto> send(@RequestBody MessageDto message,
-                                    @RequestParam(required = false) Long thread_id) throws JsonProcessingException;
+                                    @RequestParam(required = false) Long thread_id,
+                                    @RequestParam(defaultValue = "true") boolean wait) throws JsonProcessingException;
 
     @PatchMapping( value = "/messages/{message_id}",
             consumes = "application/json",

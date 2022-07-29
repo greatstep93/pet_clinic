@@ -1,23 +1,19 @@
 package com.vet24.discord.models.dto.discord.embed;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @EqualsAndHashCode
-@Data
-
+@Getter
+@Setter
 public class EmbedImageDto {
 
-    @JsonProperty
     private String url;
 
-    @JsonProperty
     private String proxy_url;
 
-    @JsonProperty
     private Integer width;
 
-    @JsonProperty
     private Integer height;
 }
