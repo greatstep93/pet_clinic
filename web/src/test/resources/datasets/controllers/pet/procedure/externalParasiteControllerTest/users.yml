@@ -9,6 +9,7 @@ USER_ENTITIES:
     ENABLED: true
     EMAIL: "user2@gmail.com"
     PASSWORD: "{bcrypt}$2a$12$FP8JBFyJttuTOitlBAR.xe5ThNOa8qX8TlNSWgQetSyvHdH/9o9Pq" #"user2"
+
 PROFILES:
   - USER_ID: 1
     AVATAR_URL: "test.png"
@@ -18,6 +19,7 @@ PROFILES:
     AVATAR_URL: "test.png"
     FIRST_NAME: "Petr"
     LAST_NAME: "Petrov"
+
 ROLE:
   - NAME: "CLIENT"
 
