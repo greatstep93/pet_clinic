@@ -9,24 +9,24 @@ import lombok.EqualsAndHashCode;
 @Setter
 public class EmbedDto {
 
-    private EmbedType type;
+    private EmbedType type;    /// тип Embed вложения
 
-    private String url;
+    private String url;             /// ссылка в заголовке Embed
 
-    private String title;
+    private String title;           /// заголовок Embed
 
-    private String description;
+    private String description;     /// Текст вложенного Embed
 
-    private Integer color;
+    private Integer color;          /// Цвет Embed блока
 
-    private String timestamp;
+    private String timestamp;       /// Время публикации
 
-    private EmbedFieldDto[] fields;
+    private EmbedFieldDto[] fields;     ///  Дополнительные абзацы для форматирования Embed блока
 
-    private EmbedImageDto image;
+    private EmbedImageDto image;        /// Изображение вложенное в Embed
 
-    private EmbedThumbnailDto thumbnail;
+    private EmbedThumbnailDto thumbnail;    /// Картинка - миниатюра рядом с заголовком Embed блока
 
-    private EmbedFooterDto footer;
+    private EmbedFooterDto footer;  /// футер Embed блока (можно добавить текст и иконку)
 
 }

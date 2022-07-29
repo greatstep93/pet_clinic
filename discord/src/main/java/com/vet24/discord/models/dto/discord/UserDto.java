@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDto {
-
+    // является ли ботом
     private boolean bot;
 
     private Long id;
@@ -16,7 +16,7 @@ public class UserDto {
     private String username;
 
     private String avatar;
-
+    // 4х-значный идентификатор пользователя на сервере
     private String discriminator;
 
     private String email;

@@ -10,35 +10,35 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class MessageDto {
 
-    private Long id;
+    private Long id;  // id сообщения
 
-    private Integer type;
+    private Integer type;   // тип сообщения ( по умолчанию 0 ) ;
 
-    private String content;
+    private String content;  // текст сообщения ( до 2000 символов)
 
-    private Long channel_id;
+    private Long channel_id;  // id канала
 
-    private UserDto author;
+    private UserDto author;  // автор сообщения
 
-    private AttachmentDto[] attachment;
+    private AttachmentDto[] attachment; // вложенные файлы
 
-    private EmbedDto[] embeds;
+    private EmbedDto[] embeds; // Embed блок в сообщении
 
-    private UserDto[] mentions;
+    private UserDto[] mentions; // упоминания юзеров в сообщении
 
-    private Long[] mention_roles;
+    private Long[] mention_roles;   // упоминания ролей в сообщении
 
-    private boolean pinned;
+    private boolean pinned; // является ли сообщение закрепленным
 
-    private boolean mention_everyone;
+    private boolean mention_everyone; // упомянуты ли в сообщении все
 
-    private boolean tts;
+    private boolean tts; // озвучить ли сообщение после отправки
 
-    private String timestamp;
+    private String timestamp; // время публикации сообщения
 
-    private String edited_timestamp;
+    private String edited_timestamp; // время редактирования сообщения ( если было изменено, если нет то будет Null)
 
-    private Long webhook_id;
+    private Long webhook_id; // id webhook через который было отправлено сообщение
 
 
 }
