@@ -8,7 +8,6 @@ import lombok.EqualsAndHashCode;
 @Getter
 @Setter
 @EqualsAndHashCode
-
 public class MessageDto {
 
     private Long id;
